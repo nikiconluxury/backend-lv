@@ -92,19 +92,19 @@ module.exports = {
   ],
   modules: {
     eventBus: {
-      resolve: '@medusajs/event-bus-redis',
-      // resolve: "@medusajs/medusa/event-bus-local"
-      options: {
-        redisUrl: process.env.REDIS_URL
-      }
+      // resolve: '@medusajs/event-bus-redis',
+       resolve: "@medusajs/medusa/event-bus-local"
+      // options: {
+      //   redisUrl: process.env.REDIS_URL
+      // }
     },
     cacheService: {
-      resolve: '@medusajs/cache-redis',
-      // resolve: "@medusajs/medusa/cache-inmemory",
-      options: {
-        redisUrl: process.env.REDIS_URL,
-        ttl: 30,
-      } 
+      // resolve: '@medusajs/cache-redis',
+      resolve: "@medusajs/medusa/cache-inmemory",
+      // options: {
+      //   redisUrl: process.env.REDIS_URL,
+      //   ttl: 30,
+      // } 
     }
   },
   featureFlags: {
