@@ -27,7 +27,6 @@
   "dependencies": {
     "@auth0/nextjs-auth0": "^3.5.0",
     "@medusajs/admin": "^7.1.16",
-    "@medusajs/event-bus-local" : "latest",
     "@medusajs/cache-inmemory": "1.8.11",
     "@medusajs/cache-redis": "^1.9.2",
     "@medusajs/event-bus-local": "1.9.9",
