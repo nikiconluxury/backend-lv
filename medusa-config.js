@@ -36,7 +36,7 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000"
 // const DB_PORT = process.env.DB_PORT
 // const DB_DATABASE = process.env.DB_DATABASE
 const DATABASE_URL="postgresql://postgres.qoqaycsaxnohnfjcufxw:LuxuryVerse2024@aws-0-us-west-1.pooler.supabase.com:5432/postgres"
-
+const REDIS_URL="https://redis.popovtech.com"
 // const DATABASE_URL = 
 //   `postgres://${DB_USERNAME}:${DB_PASSWORD}` + 
 //   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`
@@ -92,11 +92,11 @@ module.exports = {
   ],
   modules: {
     eventBus: {
-      // resolve: '@medusajs/event-bus-redis',
-       resolve: "@medusajs/medusa/event-bus-local"
-      // options: {
-      //   redisUrl: process.env.REDIS_URL
-      // }
+      resolve: '@medusajs/event-bus-redis',
+       // resolve: "@medusajs/medusa/event-bus-local"
+      options: {
+        redisUrl: process.env.REDIS_URL
+      }
     },
     cacheService: {
       // resolve: '@medusajs/cache-redis',
