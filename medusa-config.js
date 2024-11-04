@@ -36,7 +36,6 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000"
 // const DB_PORT = process.env.DB_PORT
 // const DB_DATABASE = process.env.DB_DATABASE
 const DATABASE_URL="postgresql://postgres.qoqaycsaxnohnfjcufxw:LuxuryVerse2024@aws-0-us-west-1.pooler.supabase.com:5432/postgres"
-const REDIS_URL="https://redis.popovtech.com"
 // const DATABASE_URL = 
 //   `postgres://${DB_USERNAME}:${DB_PASSWORD}` + 
 //   `@${DB_HOST}:${DB_PORT}/${DB_DATABASE}`
@@ -95,14 +94,16 @@ module.exports = {
       resolve: '@medusajs/event-bus-redis',
        // resolve: "@medusajs/medusa/event-bus-local"
       options: {
-        redisUrl: process.env.REDIS_URL
+        // redisUrl: process.env.REDIS_URL
+        redisUrl:"rediss://default:AVNS__LdVRgcy6mZPCfztP4z@db-caching-nyc3-62916-do-user-15526822-0.f.db.ondigitalocean.com:25061"
       }
     },
     cacheService: {
       resolve: '@medusajs/cache-redis',
       // resolve: "@medusajs/medusa/cache-inmemory",
       options: {
-        redisUrl: process.env.REDIS_URL,
+        // redisUrl: process.env.REDIS_URL,
+        redisUrl:"rediss://default:AVNS__LdVRgcy6mZPCfztP4z@db-caching-nyc3-62916-do-user-15526822-0.f.db.ondigitalocean.com:25061",
         ttl: 30,
       } 
     }
