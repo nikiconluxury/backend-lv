@@ -99,12 +99,12 @@ module.exports = {
       }
     },
     cacheService: {
-      // resolve: '@medusajs/cache-redis',
-      resolve: "@medusajs/medusa/cache-inmemory",
-      // options: {
-      //   redisUrl: process.env.REDIS_URL,
-      //   ttl: 30,
-      // } 
+      resolve: '@medusajs/cache-redis',
+      // resolve: "@medusajs/medusa/cache-inmemory",
+      options: {
+        redisUrl: process.env.REDIS_URL,
+        ttl: 30,
+      } 
     }
   },
   featureFlags: {
